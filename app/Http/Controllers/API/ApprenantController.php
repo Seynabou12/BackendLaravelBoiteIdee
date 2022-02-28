@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class ApprenantController extends Controller
 {
+    public function index() 
+    {
+        $apprenant = Apprenant::all();
+        return response()->json([
+            'status'=>200,
+            'apprenant'=>$apprenant
+        ]);
+    }
     public function store(Request $request)
     {
         $apprenant = new Apprenant;
